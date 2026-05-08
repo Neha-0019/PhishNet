@@ -1,0 +1,192 @@
+# ============================================
+#   PhishNet .gitignore
+#   Covers: Python/Flask + React/Vite + Chrome Extension
+# ============================================
+
+# ──────────────────────────────────────────
+# 🐍 PYTHON / FLASK (backend/)
+# ──────────────────────────────────────────
+
+# Virtual environment
+venv/
+env/
+.env/
+.venv/
+
+# Environment variables (NEVER commit this)
+.env
+.env.local
+.env.production
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Compiled extensions
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# ──────────────────────────────────────────
+# 🤖 ML MODEL FILES (backend/model/)
+# ──────────────────────────────────────────
+
+# Trained model files (too large for GitHub)
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.model
+*.bin
+
+# SHAP explainer cache
+backend/model/phishnet_explainer.pkl
+backend/model/phishnet_model.pkl
+
+# ──────────────────────────────────────────
+# 📊 DATASET FILES (data/)
+# ──────────────────────────────────────────
+
+# Raw datasets (too large, download separately)
+data/
+*.csv
+*.tsv
+*.xlsx
+*.json.gz
+
+# Exception — keep sample test file
+!data/sample_test_urls.csv
+
+# ──────────────────────────────────────────
+# 🗄️ DATABASE
+# ──────────────────────────────────────────
+
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# ──────────────────────────────────────────
+# ⚛️ REACT FRONTEND (frontend/)
+# ──────────────────────────────────────────
+
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Build output
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Vite cache
+frontend/.cache/
+
+# Package lock (keep package.json, ignore lock if needed)
+# frontend/package-lock.json   ← uncomment if using yarn
+# frontend/yarn.lock           ← uncomment if using npm
+
+# ──────────────────────────────────────────
+# 🌐 CHROME EXTENSION (extension/)
+# ──────────────────────────────────────────
+
+# Extension build output (if using webpack/vite)
+extension/dist/
+extension/build/
+
+# Extension node modules (if any)
+extension/node_modules/
+
+# Packed extension file
+*.crx
+*.pem
+
+# ──────────────────────────────────────────
+# 🔐 SECRETS & API KEYS (CRITICAL)
+# ──────────────────────────────────────────
+
+# Never commit these
+*.pem
+*.key
+*.cert
+*.crt
+secrets.py
+config/secrets.json
+api_keys.txt
+
+# ──────────────────────────────────────────
+# 🖥️ OS FILES
+# ──────────────────────────────────────────
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.fuse_hidden*
+
+# ──────────────────────────────────────────
+# 🛠️ IDE & EDITOR FILES
+# ──────────────────────────────────────────
+
+# VS Code / Cursor / Antigravity
+.vscode/
+.antigravity/
+*.code-workspace
+
+# JetBrains / PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ──────────────────────────────────────────
+# 📝 LOGS & TEMP
+# ──────────────────────────────────────────
+
+logs/
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pip-log.txt
+
+# ──────────────────────────────────────────
+# 🧪 TESTING
+# ──────────────────────────────────────────
+
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+test-results/
+
+# ──────────────────────────────────────────
+# 🐳 DOCKER (if you add later)
+# ──────────────────────────────────────────
+
+.dockerignore
+docker-compose.override.yml
