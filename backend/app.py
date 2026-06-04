@@ -1,20 +1,29 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
-from config import Config
-from database.models import db, ScanResult
-import os
-
 def create_app():
+    print("STEP 1")
     app = Flask(__name__)
+
+    print("STEP 2")
     app.config.from_object(Config)
+
+    print("STEP 3")
     CORS(app)
-    
+
+    print("STEP 4")
     db.init_app(app)
-    
+
+    print("STEP 5")
     from routes.predict import predict_bp
+
+    print("STEP 6")
     from routes.report import report_bp
+
+    print("STEP 7")
     from routes.feedback import feedback_bp
+
+    print("STEP 8")
     from routes.bulk import bulk_bp
+
+    print("STEP 9")
     
     app.register_blueprint(predict_bp, url_prefix='/api')
     app.register_blueprint(report_bp, url_prefix='/api')
@@ -58,9 +67,11 @@ def create_app():
             "trend_data": trend_data
         })
 
+    print("STEP 10")
     with app.app_context():
         db.create_all()
 
+    print("STEP 11")
     return app
 
 if __name__ == '__main__':
