@@ -1,3 +1,6 @@
+// Configuration: Pointing to your live backend API URL on Render
+const API_BASE_URL = 'https://phishnet-backend-api.onrender.com/api';
+
 let bannerInjected = false;
 
 function showPhishingBanner(data) {
@@ -44,7 +47,8 @@ function showPhishingBanner(data) {
   reportBtn.innerText = 'Report & Leave';
   reportBtn.style.cssText = 'background: white; border: none; color: #ef4444; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;';
   reportBtn.onclick = () => {
-    fetch('http://localhost:5000/api/report', {
+    // Updated: Sending report request to your live Render server
+    fetch(`${API_BASE_URL}/report`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: window.location.href })

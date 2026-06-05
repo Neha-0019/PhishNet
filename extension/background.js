@@ -1,3 +1,6 @@
+// Configuration: Pointing to your live backend API URL on Render
+const API_BASE_URL = 'https://phishnet-backend-api.onrender.com/api';
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "get_status" && sender.tab) {
     let tabId = sender.tab.id;
@@ -14,7 +17,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       return;
     }
 
-    fetch('http://localhost:5000/api/predict', {
+    // Updated: Fetching prediction from your live Render server
+    fetch(`${API_BASE_URL}/predict`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url: tab.url })

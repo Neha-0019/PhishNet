@@ -1,3 +1,7 @@
+// Configuration: Pointing to your live Render backend and frontend dashboard URLs
+const API_BASE_URL = 'https://phishnet-backend-api.onrender.com/api';
+const DASHBOARD_URL = 'https://phishnet-dashboard.onrender.com';
+
 document.addEventListener('DOMContentLoaded', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     let tab = tabs[0];
@@ -29,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('statusIcon').src = 'icons/icon48.png';
       document.getElementById('confidence').textContent = '';
       
-      fetch('http://localhost:5000/api/predict', {
+      // Updated: Fetching prediction from your live Render server
+      fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: tab.url })
@@ -46,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('reportBtn').addEventListener('click', () => {
-      fetch('http://localhost:5000/api/report', {
+      // Updated: Sending report request to your live Render server
+      fetch(`${API_BASE_URL}/report`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: tab.url })
@@ -56,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('dashboardLink').addEventListener('click', () => {
-      chrome.tabs.create({ url: 'http://localhost:5173/dashboard' });
+      // Updated: Redirecting user to your live deployed dashboard website
+      chrome.tabs.create({ url: DASHBOARD_URL });
     });
   });
 });
