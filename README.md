@@ -95,3 +95,5 @@ Navigate to the `frontend` folder, install npm packages, and run the Vite server
 This project is configured to deploy directly to **Render**:
 * **Backend:** Hosted as a Python Web Service linked to the `/backend` subfolder.
 * **Frontend:** Hosted as a Static Site linked to the `/frontend` subfolder with build output target `dist`.
+
+---
