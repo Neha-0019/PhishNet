@@ -6,6 +6,19 @@ PhishNet is an end-to-end, AI-powered cybersecurity suite designed to detect phi
 
 ---
 
+## 📸 Screenshots
+
+### 1. Phishing Scan Results & Explainability Panel
+![Scan Results](screenshots/scan_results.png)
+
+### 2. Live Analytics Dashboard
+![Analytics Dashboard](screenshots/analytics_dashboard.png)
+
+### 3. Chrome Extension Popup
+![Chrome Extension Popup](screenshots/extension_popup.png)
+
+---
+
 ## 🚀 Key Features
 
 * **Real-time Chrome Extension:** Actively monitors pages as you browse, shows visual badges (✓ or ⚠) on threat status, and alerts users via desktop notifications.
@@ -45,6 +58,7 @@ PhishNet is an end-to-end, AI-powered cybersecurity suite designed to detect phi
   * `routes/` - API endpoints (predict, stats, feedback, bulk)
 * **`frontend/`** - React SPA (Vite + Tailwind CSS v4)
 * **`extension/`** - Chrome Extension (Manifest V3 client agent)
+* **`screenshots/`** - Folder containing project demonstration images
 
 ---
 
