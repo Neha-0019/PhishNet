@@ -2,7 +2,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  // Replace this URL with your actual live Render Backend URL once you create the Web Service
+  baseURL: 'https://phishnet-backend-api.onrender.com/api',
 });
 
 // Request interceptor
